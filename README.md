@@ -138,10 +138,7 @@ MIT — free to use, modify, and share with attribution.
 
 ## Author
 
-**Be Prakash**
-- 🐙 GitHub: [@beingbe98](https://github.com/beingbe98)
-- 💼 Co-founder, [Aromasymphonies Private Limited](https://aromasymphonies.com)
-- 📍 Chennai, India
+**Be Prakash** — [@beingbe98](https://github.com/beingbe98)
 
 ---
 
