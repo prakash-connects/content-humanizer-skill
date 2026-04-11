@@ -28,8 +28,10 @@ A structured Claude AI skill (system prompt + instruction set) that detects AI w
 ### Option 2 — Use via Claude API
 ```python
 import anthropic
+from pathlib import Path
 
-with open("SKILL.md", "r") as f:
+skill_path = Path(__file__).resolve().parent / "SKILL.md"
+with open(skill_path, "r", encoding="utf-8") as f:
     system_prompt = f.read()
 
 client = anthropic.Anthropic(api_key="YOUR_API_KEY")

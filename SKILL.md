@@ -101,7 +101,7 @@ Apply ALL of the following techniques:
 - Verify original meaning is fully preserved
 - Check that professional tone and credibility are maintained
 - Ensure factual accuracy is untouched
-- Confirm length is roughly equivalent to input (±10%)
+- Confirm length remains broadly aligned with input (typically within ±10–30%, depending on platform needs)
 - Confirm NO phrases from the Elimination List remain
 
 ---
