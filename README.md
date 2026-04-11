@@ -136,4 +136,13 @@ MIT — free to use, modify, and share with attribution.
 
 ---
 
+## Author
+
+**Be Prakash**
+- 🐙 GitHub: [@beingbe98](https://github.com/beingbe98)
+- 💼 Co-founder, [Aromasymphonies Private Limited](https://aromasymphonies.com)
+- 📍 Chennai, India
+
+---
+
 *Built for professionals who use AI as a drafting tool but want their published voice to sound like them.*
