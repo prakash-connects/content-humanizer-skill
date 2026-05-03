@@ -6,12 +6,14 @@
 
 ## What This Is
 
-A structured Claude AI skill (system prompt + instruction set) that detects AI writing patterns and rewrites content to sound authentically human — designed for legitimate professional and educational use.
+A structured Claude AI skill (system prompt + instruction set) that detects AI writing patterns — from GPT-4o, Gemini, Claude, Llama, Mistral, and similar LLMs — and rewrites content to sound authentically human. Designed for legitimate professional and educational use.
 
 **Supports:**
 - ✅ LinkedIn posts
 - ✅ Quora answers
 - ✅ Articles & blog posts
+- ✅ Twitter/X threads
+- ✅ Email newsletters
 - ✅ Comment replies
 - ✅ General professional writing
 
@@ -35,7 +37,7 @@ with open("SKILL.md", "r") as f:
 client = anthropic.Anthropic(api_key="YOUR_API_KEY")
 
 message = client.messages.create(
-    model="claude-opus-4-5",
+    model="claude-opus-4-5",  # or claude-sonnet-4-5 for faster/cheaper runs
     max_tokens=2048,
     system=system_prompt,
     messages=[
@@ -54,7 +56,7 @@ If you're building a custom AI assistant or agent pipeline that supports skill l
 
 ```yaml
 name: content-humanizer
-version: 1.0
+version: 2.0
 ```
 
 ---
@@ -64,8 +66,9 @@ version: 1.0
 When using this skill, structure your message like this:
 
 ```
-Platform: [LinkedIn / Quora / Article / Comment / General]
+Platform: [LinkedIn / Quora / Article / Twitter-X / Email / Comment / General]
 Tone: [Keep formal / Go casual / Professional-conversational]
+AI Source (optional): [GPT / Gemini / Claude / Other]
 
 [Paste your AI-generated content here]
 ```
@@ -80,10 +83,11 @@ Tone: [Keep formal / Go casual / Professional-conversational]
 |---|---|
 | **Perplexity boost** | Replaces predictable word choices with contextually richer alternatives |
 | **Burstiness** | Mixes short punchy sentences with longer complex ones for natural rhythm |
-| **AI marker removal** | Strips "Moreover," "Furthermore," "It's important to note," etc. |
+| **AI marker removal** | Strips "Moreover," "Furthermore," "Delve into," "Seamlessly," and 15+ other LLM clichés |
 | **Tone variation** | Fluctuates between formal and conversational within professional bounds |
 | **Personal voice** | Adds subtle first-person hooks and experiential references |
-| **Platform adaptation** | Formats and tones for LinkedIn, Quora, articles, or comments |
+| **Platform adaptation** | Formats and tones for LinkedIn, Quora, articles, Twitter/X, email, or comments |
+| **Multi-model detection** | Recognizes patterns from GPT-4o, Gemini, Claude, Llama, and other common LLMs |
 
 ---
 
@@ -106,7 +110,9 @@ content-humanizer-skill/
 ├── examples/
 │   ├── linkedin.md       ← LinkedIn post example transformation
 │   ├── quora.md          ← Quora answer example transformation
-│   └── article.md        ← Article/blog example transformation
+│   ├── article.md        ← Article/blog example transformation
+│   ├── twitter.md        ← Twitter/X thread example transformation
+│   └── email.md          ← Email newsletter example transformation
 └── LICENSE               ← MIT License
 ```
 
@@ -126,7 +132,7 @@ This skill is intended for:
 
 ## Contributing
 
-Pull requests welcome. If you add new platform-specific instructions (e.g., Twitter/X, email newsletters, Reddit), please follow the existing format in `SKILL.md` and add a matching example in `examples/`.
+Pull requests welcome. If you add new platform-specific instructions (e.g., Reddit, YouTube descriptions, podcast show notes), please follow the existing format in `SKILL.md` and add a matching example in `examples/`.
 
 ---
 
