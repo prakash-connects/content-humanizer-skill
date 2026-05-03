@@ -6,7 +6,7 @@
 
 ## What This Is
 
-A structured Claude AI skill (system prompt + instruction set) that detects AI writing patterns — from GPT-4o, Gemini, Claude, Llama, Mistral, and similar LLMs — and rewrites content to sound authentically human. Designed for legitimate professional and educational use.
+A structured Claude AI skill (system prompt + instruction set) that detects AI writing patterns — from GPT-4 variants, Gemini, Claude, Llama, Mistral, and similar LLMs — and rewrites content to sound authentically human. Designed for legitimate professional and educational use.
 
 **Supports:**
 - ✅ LinkedIn posts
@@ -87,7 +87,7 @@ AI Source (optional): [GPT / Gemini / Claude / Other]
 | **Tone variation** | Fluctuates between formal and conversational within professional bounds |
 | **Personal voice** | Adds subtle first-person hooks and experiential references |
 | **Platform adaptation** | Formats and tones for LinkedIn, Quora, articles, Twitter/X, email, or comments |
-| **Multi-model detection** | Recognizes patterns from GPT-4o, Gemini, Claude, Llama, and other common LLMs |
+| **Multi-model detection** | Recognizes patterns from GPT-4 variants, Gemini, Claude, Llama, and other common LLMs |
 
 ---
 
