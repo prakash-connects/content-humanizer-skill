@@ -1,31 +1,53 @@
-# 🧠 Content Humanizer — Claude AI Skill
+# 🧠 Content Humanizer — Perplexity Skill v2.0
 
-> Transform AI-generated text into natural, human-like writing while preserving professional quality and original meaning.
+> Transform AI-generated text into natural, human-like writing — from a 5-word WhatsApp reply to a 10,000-word blog post. Powered by NLP detection science: perplexity elevation, burstiness injection, and full AI-ism removal.
+
+**👉 Also available as a Claude Artifact:** [content-humanizer-artifact](https://github.com/prakash-connects/content-humanizer-artifact)
 
 ---
 
 ## What This Is
 
-A structured Claude AI skill (system prompt + instruction set) that detects AI writing patterns and rewrites content to sound authentically human — designed for legitimate professional and educational use.
+A precision content humanization skill built on the actual science behind how AI detectors (GPTZero, Turnitin, Originality.ai, Copyleaks) work. It doesn't just swap words — it targets the three detection layers:
 
-**Supports:**
-- ✅ LinkedIn posts
-- ✅ Quora answers
-- ✅ Articles & blog posts
-- ✅ Comment replies
-- ✅ General professional writing
+- **Perplexity** — raises unpredictability score above human baseline (>85 PPL)
+- **Burstiness** — injects dramatic sentence rhythm variation (>0.4 B score)
+- **Classifier patterns** — removes BERT-flagged transition phrases and RLHF-induced verbosity
+
+**Supports every format:**
+- 📱 WhatsApp / casual chat
+- 💼 LinkedIn posts
+- 🌐 Quora / forum answers
+- 📝 Blog posts and articles (up to 10,000 words)
+- 📧 Email (cold outreach to internal comms)
+- 💬 Comment replies
 
 ---
 
-## How to Use
+## How to Use — Perplexity
 
-### Option 1 — Paste as System Prompt (Claude.ai / API)
+### Load as a Perplexity Skill
+1. Open [Perplexity.ai](https://perplexity.ai)
+2. In your conversation, trigger skill loading with: `load_skill content-humanizer`
+3. Once loaded, paste your content and specify platform/tone
+4. Perplexity will apply the full humanization workflow
+
+### Direct Prompt Use
+Copy the full contents of [`SKILL.md`](./SKILL.md) and paste it as a system prompt in any AI interface.
+
+---
+
+## How to Use — Claude
+
+> For the Claude-specific version with artifact format, see: [content-humanizer-artifact](https://github.com/prakash-connects/content-humanizer-artifact)
+
+### Option A — Claude Project (Recommended)
 1. Open [Claude.ai](https://claude.ai) → New Project → **Project Instructions**
 2. Copy the full contents of [`SKILL.md`](./SKILL.md)
-3. Paste it as the system/project instruction
-4. Start chatting — paste any AI-generated text and ask Claude to humanize it
+3. Paste as the project system instruction
+4. Paste any AI-generated content in chat to humanize it
 
-### Option 2 — Use via Claude API
+### Option B — Claude API
 ```python
 import anthropic
 
@@ -36,64 +58,55 @@ client = anthropic.Anthropic(api_key="YOUR_API_KEY")
 
 message = client.messages.create(
     model="claude-opus-4-5",
-    max_tokens=2048,
+    max_tokens=4096,
     system=system_prompt,
     messages=[
         {
             "role": "user",
-            "content": "Platform: LinkedIn\n\nHumanize this:\n\nIt is important to note that artificial intelligence has significantly transformed the marketing landscape. Moreover, businesses must adapt to these changes to remain competitive."
+            "content": "Platform: LinkedIn\n\nHumanize this:\n\nIt is important to note that AI has significantly transformed marketing. Moreover, businesses must adapt to remain competitive."
         }
     ]
 )
-
 print(message.content[0].text)
-```
-
-### Option 3 — Load as Custom Skill (Advanced Setups)
-If you're building a custom AI assistant or agent pipeline that supports skill loading, reference `SKILL.md` directly using the frontmatter metadata:
-
-```yaml
-name: content-humanizer
-version: 1.0
 ```
 
 ---
 
 ## Prompt Format
 
-When using this skill, structure your message like this:
-
 ```
-Platform: [LinkedIn / Quora / Article / Comment / General]
-Tone: [Keep formal / Go casual / Professional-conversational]
+Platform: [LinkedIn / WhatsApp / Blog / Quora / Email / Comment / General]
+Tone: [Casual / Professional-Conversational / Formal]
+Length: [Preserve / Tighten / Expand]
 
-[Paste your AI-generated content here]
+[Paste your content here]
 ```
 
-**Minimal usage** — just paste the text and Claude will apply general humanization automatically.
+Minimal use: just paste the text — skill auto-detects platform and applies Professional-Conversational tone.
 
 ---
 
 ## What It Does
 
-| Technique | Description |
+| Technique | What It Targets |
 |---|---|
-| **Perplexity boost** | Replaces predictable word choices with contextually richer alternatives |
-| **Burstiness** | Mixes short punchy sentences with longer complex ones for natural rhythm |
-| **AI marker removal** | Strips "Moreover," "Furthermore," "It's important to note," etc. |
-| **Tone variation** | Fluctuates between formal and conversational within professional bounds |
-| **Personal voice** | Adds subtle first-person hooks and experiential references |
-| **Platform adaptation** | Formats and tones for LinkedIn, Quora, articles, or comments |
+| **Perplexity Elevation** | Raises PPL score by using surprising-but-accurate word choices |
+| **Burstiness Injection** | Forces sentence length variation: short punchy + long complex |
+| **AI-ism Removal** | Strips "Moreover", "Furthermore", "delve into", "tapestry" + 30 more |
+| **Structural Humanization** | Irregular paragraph lengths, organic transitions |
+| **Voice Injection** | First-person hooks, contractions, emotional investment |
+| **Platform Optimization** | Tone-matched output for each platform from WhatsApp to 10k-word articles |
+| **Self-Validation Loop** | Built-in 9-point checklist run before every output |
 
 ---
 
 ## Example
 
-**Before:**
-> "It is important to note that artificial intelligence has significantly transformed the marketing landscape. Moreover, businesses must adapt to these changes to remain competitive."
+**Before (High AI Risk):**
+> "It is important to note that artificial intelligence has significantly transformed the marketing landscape. Moreover, businesses must adapt to these changes to remain competitive. Furthermore, those who fail to embrace this technology may find themselves at a disadvantage."
 
-**After (LinkedIn):**
-> "Here's what I've noticed — AI has completely shaken up how we do marketing. Companies rolling with these changes are pulling ahead fast. The ones dragging their feet? They're going to feel it. Not someday. Now."
+**After — LinkedIn (Low AI Risk):**
+> "Here's what I've noticed — AI has completely shaken up how we do marketing. The companies rolling with these changes are pulling ahead fast. And the ones dragging their feet? They're going to feel it. Not someday. Now."
 
 ---
 
@@ -101,12 +114,12 @@ Tone: [Keep formal / Go casual / Professional-conversational]
 
 ```
 content-humanizer-skill/
-├── SKILL.md              ← The main skill/system prompt (copy this into Claude)
+├── SKILL.md              ← Main skill file (load this in Perplexity or paste in Claude)
 ├── README.md             ← This file
 ├── examples/
-│   ├── linkedin.md       ← LinkedIn post example transformation
-│   ├── quora.md          ← Quora answer example transformation
-│   └── article.md        ← Article/blog example transformation
+│   ├── whatsapp.md       ← WhatsApp reply transformation example
+│   ├── linkedin.md       ← LinkedIn post transformation example
+│   └── blog.md           ← Blog post transformation example
 └── LICENSE               ← MIT License
 ```
 
@@ -114,19 +127,15 @@ content-humanizer-skill/
 
 ## Ethical Use
 
-This skill is intended for:
-- ✅ Rephrasing your own AI-assisted drafts for authentic publishing
-- ✅ Learning how to write more naturally
-- ✅ Professional content refinement
-- ❌ Academic fraud or plagiarism
-- ❌ Impersonation or deception
-- ❌ Spreading misinformation
+✅ Rephrasing your own AI-assisted drafts · Professional content refinement · Marketing copy · Educational materials
+
+❌ Academic fraud · Impersonation · Misinformation · Harassment
 
 ---
 
-## Contributing
+## Related
 
-Pull requests welcome. If you add new platform-specific instructions (e.g., Twitter/X, email newsletters, Reddit), please follow the existing format in `SKILL.md` and add a matching example in `examples/`.
+- **Claude Artifact version:** [prakash-connects/content-humanizer-artifact](https://github.com/prakash-connects/content-humanizer-artifact)
 
 ---
 
@@ -138,8 +147,6 @@ MIT — free to use, modify, and share with attribution.
 
 ## Author
 
-**Be Prakash** — [@beingbe98](https://github.com/beingbe98)
+**Prakash Behera** — [@prakash-connects](https://github.com/prakash-connects)
 
----
-
-*Built for professionals who use AI as a drafting tool but want their published voice to sound like them.*
+*Built on the actual science of how AI detectors work — not guesswork.*

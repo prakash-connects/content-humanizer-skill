@@ -1,45 +1,28 @@
 # Example: LinkedIn Post Humanization
 
-## Input (AI-Generated — High Risk)
+## Input (AI-generated, Critical Risk)
 
-```
-It is important to note that the rise of personal branding on LinkedIn has significantly
-transformed how professionals communicate their value. Moreover, individuals who fail to
-invest in their online presence may find themselves at a competitive disadvantage.
-Furthermore, crafting consistent and authentic content is essential for long-term
-professional growth in today's digital landscape.
-```
+> "In today's fast-paced world, it is important to note that personal branding has become a pivotal aspect of professional success. Moreover, leveraging social media platforms can significantly enhance one's visibility. Furthermore, professionals who fail to establish a strong online presence may find themselves at a disadvantage in the competitive job market."
 
-## Prompt Used
+---
 
-```
-Platform: LinkedIn
-Tone: Professional-conversational
+## Output (Humanized, Low Risk)
 
-[pasted content above]
-```
+> "Three years ago I had zero LinkedIn presence. No posts, no profile photo worth keeping, no real story.
+>
+> Then I started writing — not to perform, but to think out loud. Turns out people actually read it.
+>
+> The job market shifted while I was figuring that out. Companies started checking your online presence before the first call. Not to judge — to get a feel for how you think.
+>
+> Your LinkedIn profile isn't a CV anymore. It's a conversation starter. Are you showing up to it?"
 
-## Output (Humanized — Low Risk)
-
-```
-Personal branding on LinkedIn has changed everything — and I mean that literally.
-
-Three years ago, just having a filled-out profile was enough. Now? The people getting
-noticed are the ones actually showing up with a point of view.
-
-And here's the uncomfortable truth: if you're not putting anything out there, someone
-else in your space is. Quietly. Consistently.
-
-It doesn't have to be daily posts or viral threads. It's about being findable, being
-recognizable, and being worth remembering when an opportunity comes up.
-
-Start somewhere. Even one honest post a week changes how people see you over time.
-```
+---
 
 ## Key Changes Made
+- Eliminated "In today's fast-paced world", "it is important to note", "pivotal", "leveraging", "Furthermore", "Moreover" (all Tier 1)
+- Replaced generic claim with a personal story hook
+- Dramatic burstiness: 6-word line → 3-word line → 15-word sentence → short paragraph
+- Ended with a genuine question instead of a call-to-engagement
+- First-person voice throughout — felt personal, not broadcast
 
-- Removed "It is important to note," "Moreover," "Furthermore"
-- Added personal framing ("I mean that literally", "here's the uncomfortable truth")
-- Broke into short paragraphs with natural rhythm
-- Replaced formal conclusions with a direct, warm call-to-action
-- Added temporal specificity ("Three years ago") for authenticity
+## AI Risk: Critical → Low
